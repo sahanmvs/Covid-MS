@@ -2,7 +2,16 @@
 
 @section('content')
                      <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Covid19-Testing</h1>
+                     <div class="row">
+                        <h1 class="h3 mb-2 text-gray-800">Add Test</h1>
+                        <nav class="ml-auto" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Add Test</li>
+                            </ol>
+                          </nav>
+                        </div>
+
                     @if(count($errors)>0)
                     <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">x</button>

@@ -8,6 +8,7 @@ use App\Models\Phlebotomist;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class TestsController extends Controller
 {
@@ -91,6 +92,27 @@ class TestsController extends Controller
     	return response()->download(public_path('assets/'.$file));
     }
 
-    
+    //DashBoard Values
+    function dashboad_details(){
+        $total_test_count = Testrecord::all()->count();
+
+        $total_assigned_count = Testrecord::where('ReportStaus', 'Assigned')->count();
+
+        $total_otw_count = Testrecord::where('ReportStaus', 'On the Way for Collection')->count();
+
+        $total_collected_count = Testrecord::where('ReportStaus', 'Sample Collected')->count();
+
+        $total_sent_count = Testrecord::where('ReportStaus', 'Sent to Lab')->count();
+
+        $total_delivered_count = Testrecord::where('ReportStaus', 'Delivered')->count();
+
+        $total_users = User::where('role', 'user')->count();
+
+        $total_phlebotomists = Phlebotomist::all()->count();
+
+        return view('admin.dashboard', compact('total_test_count', 'total_assigned_count', 
+                    'total_otw_count', 'total_collected_count', 'total_sent_count', 
+                    'total_delivered_count', 'total_users', 'total_phlebotomists'));
+    }
 
 }

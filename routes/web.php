@@ -22,13 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
+// Route::get('/admin', function () {
+//     return view('admin.dashboard');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -69,6 +69,14 @@ Route::group(['middleware' => ['auth','admin']], function (){
 
     //users and phlebotomists
     Route::get('/viewusers', [AddUserController::class, 'allusers']);
+    Route::get('/editUser/{id}', [AddUserController::class, 'editUser']);
+    Route::post('/editUser/update', [AddUserController::class, 'updateUser']);
+
     Route::get('/viewphlebotomists', [AddPhlebotomistController::class, 'allphlebotomists']);
+    Route::get('/editPhlebotomist/{id}', [AddPhlebotomistController::class, 'editPhlebotomist']);
+    Route::post('/editPhlebotomist/update', [AddPhlebotomistController::class, 'updatePhlebotomist']);
+
+    //DashBoard Values
+    Route::get('/dashboard', [TestsController::class, 'dashboad_details']);
 });
 

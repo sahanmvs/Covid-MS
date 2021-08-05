@@ -21,7 +21,7 @@
 
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                              Total Tests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_test_count }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-virus fa-2x text-gray-300"></i>
@@ -35,13 +35,13 @@
                         <!-- Assigned test-->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
-                                <a href="assigned-test.php">
+                                <a href="{{ url('assignedtests') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                               Total Assigned</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_assigned_count }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -55,7 +55,7 @@
                         <!-- On the way for sample collection-->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
-                                <a href="ontheway-samplecollection-test.php">
+                                <a href="{{ url('otwsamples') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $total_otw_count }}</div>
                                                 </div>
                                                 <div class="col">
                                                  
@@ -82,13 +82,13 @@
                         <!-- Sample Collected -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
-                                <a href="sample-collected-test.php">
+                                <a href="{{ url('collected') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                Sample Collected</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_collected_count }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-prescription-bottle fa-2x text-gray-300"></i>
@@ -102,13 +102,13 @@
 <!-- Sent to Lab -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
-                                <a href="samplesent-lab-test.php">
+                                <a href="{{ url('sentlab') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                               Sample Sent to Lab</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_sent_count }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-microscope fa-2x text-gray-300"></i>
@@ -121,7 +121,7 @@
     <!-- Report Delivered-->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
-                                <a href="reportdelivered-test.php">
+                                <a href="{{ url('reportready') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -129,7 +129,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $total_delivered_count }}</div>
                                                 </div>
                                                 <div class="col">
                                                  
@@ -147,15 +147,15 @@
                          <!-- Total Registered Patients-->
                          <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
-
+                                <a href="{{ url('viewusers') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
 
 
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                             Total Registered Patients</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                             Total Registered Users</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_users }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -169,14 +169,14 @@
            
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
-                                      <a href="manage-phlebotomist.php">
+                                <a href="{{ url('viewphlebotomists') }}">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                    
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                               Total Registered Phlebotomist</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $total_phlebotomists}}</div>
                                         </div>
 
                                         <div class="col-auto"> 

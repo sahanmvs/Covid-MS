@@ -1,7 +1,15 @@
 @extends('layouts.master')
 @section('content')
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Users</h1>
+                    <div class="row">
+                        <h1 class="h3 mb-2 text-gray-800">Users</h1>
+                        <nav class="ml-auto" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Users</li>
+                            </ol>
+                          </nav>
+                        </div>
     
 
                     <!-- DataTales Example -->
@@ -35,7 +43,7 @@
                                             <td>{{ $data->address }}</td>
                                             <td>{{ $data->NIC }}</td>
                                 
-                                            <td><a href="/testdetails/{{ $data->id }}" class="btn btn-info btn-sm">Edit</a> </td>
+                                            <td><a href="/editUser/{{ $data->id }}" class="btn btn-info btn-sm">Edit</a> </td>
                                             <td><a href="/testdetails/{{ $data->id }}" class="btn btn-danger btn-sm">Delete</a>  </td>
                                         </tr>
                                         @endforeach                                       

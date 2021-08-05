@@ -33,5 +33,25 @@ class AddPhlebotomistController extends Controller
         return view('admin.managephlebotomist', ['phle'=>$users]);
     }
 
+    //edit phlebotomist
+    function editPhlebotomist($id){
+        $phlebotomist = Phlebotomist::find($id);
+        return view('admin.editphlebotomist', compact('phlebotomist', 'id'));
+    } 
     
+    function updatePhlebotomist(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required',
+            'empid' =>  'required',
+            'mobile'  =>  'required|numeric',
+
+        ]);
+        $phlebotomist = Phlebotomist::find($request->id);
+        $phlebotomist->name = $request->get('name');
+        $phlebotomist->EmpID = $request->get('empid');
+        $phlebotomist->Mobile = $request->get('mobile');
+        $phlebotomist->save();
+        return back()->with('success', 'Phlebotomist Updated');
+    }
 }

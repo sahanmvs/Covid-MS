@@ -17,7 +17,7 @@ class AddUserController extends Controller
 
     function send(Request $request){
         $this->validate($request, [
-            'username' => 'required',
+            'username' => 'required|min:4',
             'email' =>  'required|email|unique:users',
             'address'  =>  'required',
             'phone'  =>  'required|numeric',
@@ -40,5 +40,31 @@ class AddUserController extends Controller
     function allusers() {
         $users = DB::table('users')->where('role', 'user')->get();
         return view('admin.manageuser', ['users'=>$users]);
+    }
+
+    //edit User
+    function editUser($id){
+        $user = ModelsUser::find($id);
+        return view('admin.edituser', compact('user', 'id'));
+    } 
+    
+    function updateUser(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required|min:4',
+            'email' =>  'required|email|unique:users',
+            'address'  =>  'required',
+            'mobile'  =>  'required|numeric',
+            'NIC'   =>  'required',
+        ]);
+
+        $user = ModelsUser::find($request->id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->address = $request->get('address');
+        $user->phone = $request->get('mobile');
+        $user->NIC = $request->get('NIC');
+        $user->save();
+        return back()->with('success', 'User Updated');
     }
 }

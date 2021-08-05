@@ -1,7 +1,15 @@
 @extends('layouts.master')
 @section('content')
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">New Test Requests</h1>
+                    <div class="row">
+                        <h1 class="h3 mb-2 text-gray-800">New Test Requests</h1>
+                        <nav class="ml-auto" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">New Test</li>
+                            </ol>
+                          </nav>
+                        </div>
     
 
                     <!-- DataTales Example -->

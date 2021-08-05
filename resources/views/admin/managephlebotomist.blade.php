@@ -39,7 +39,7 @@
                                             <td>{{ $data->EmpID}}</td>   
                                             <td>{{ $data->Mobile }}</td>
                                             <td>{{ $data->RegistrationDate }}</td>
-                                            <td><a href="/testdetails/{{ $data->id }}" class="btn btn-info btn-sm">Edit</a> </td>
+                                            <td><a href="/editPhlebotomist/{{ $data->id }}" class="btn btn-info btn-sm">Edit</a> </td>
                                             <td><a href="/testdetails/{{ $data->id }}" class="btn btn-danger btn-sm">Delete</a>  </td>
                                         </tr>
                                         @endforeach                                       
