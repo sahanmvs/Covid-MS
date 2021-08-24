@@ -49,7 +49,6 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('/addphlebotomist', [AddPhlebotomistController::class, 'index']);
     Route::post('/addphlebotomist/send', [AddPhlebotomistController::class, 'send']);
 
-
     Route::get('/addtest', [AddTestController::class, 'index']);
     Route::post('/addtest/send', [AddTestController::class, 'send']);
 
@@ -64,11 +63,16 @@ Route::group(['middleware' => ['auth','admin']], function (){
     Route::get('/collected', [TestsController::class, 'collected']);
     Route::get('/sentlab', [TestsController::class, 'sentlab']);
     Route::get('/reportready', [TestsController::class, 'reportok']);
+    Route::get('/alltest', [TestsController::class, 'alltests']);
 
     Route::get('/download/{file}', [TestsController::class, 'reportdownload']);
 
     //users and phlebotomists
     Route::get('/viewusers', [AddUserController::class, 'allusers']);
+    Route::get('/view-admin-profile', [AddUserController::class, 'adminprofile']);
+    Route::get('/view-password-change', [AddUserController::class, 'showpasswordchange']);
+    Route::post('/password-change/update', [AddUserController::class, 'changepassword'])->name('profile.change.password');
+    
     Route::get('/editUser/{id}', [AddUserController::class, 'editUser']);
     Route::post('/editUser/update', [AddUserController::class, 'updateUser']);
 

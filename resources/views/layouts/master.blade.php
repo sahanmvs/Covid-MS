@@ -99,7 +99,7 @@
                         <a class="collapse-item" href="{{ url('collected') }}">Sample Collected</a>
                         <a class="collapse-item" href="{{ url('sentlab') }}">Sent to lab</a>
                         <a class="collapse-item" href="{{ url('reportready') }}">Report Delivered</a>
- <a class="collapse-item" href="all-test.php">All Tests</a>
+                        <a class="collapse-item" href="{{ url('alltest') }}">All Tests</a>
                     </div>
                 </div>
             </li>
@@ -155,9 +155,9 @@
             </li>
          
 <li class="nav-item active">
-                <a class="nav-link" href="login.php">
+                <a class="nav-link" href="{{ url('view-admin-profile') }}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Admin</span></a>
+                    <span>My Profile</span></a>
             </li>
 
       
@@ -269,11 +269,11 @@
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="profile.php">
+            <a class="dropdown-item" href="{{ url('view-admin-profile') }}">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 Profile
             </a>
-            <a class="dropdown-item" href="change-password.php">
+            <a class="dropdown-item" href="{{ url('view-password-change') }}">
                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
               Change Password
             </a>

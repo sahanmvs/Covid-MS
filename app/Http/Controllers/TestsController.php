@@ -88,6 +88,11 @@ class TestsController extends Controller
         return view('admin.reportdelivered', ['reports'=>$data]);
     }
 
+    function alltests() { 
+        $data = Testrecord::all();
+        return view('admin.alltests', ['alltests'=>$data]);
+    }
+
     function reportdownload($file) {      
     	return response()->download(public_path('assets/'.$file));
     }

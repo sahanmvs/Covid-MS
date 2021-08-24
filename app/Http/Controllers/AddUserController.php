@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User as ModelsUser;
 use App\User;
+use App\Rules\MatchOldPassword;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -67,4 +69,44 @@ class AddUserController extends Controller
         $user->save();
         return back()->with('success', 'User Updated');
     }
+
+    //Admin Profile
+
+    function adminprofile() {
+        $user = Auth::user();
+        return view('admin.admindetails', ['admin'=>$user]);
+    }
+
+    function showpasswordchange(){
+        return view('admin.adminpasswordchange');
+    }
+
+     /**
+     * Change the current password
+     * @param Request $request
+     * @return Renderable
+     */
+    public function changePassword(Request $request)
+    {       
+        $user = Auth::user();
+    
+        $userPassword = $user->password;
+        
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|same:confirm_password|min:6',
+            'confirm_password' => 'required',
+        ]);
+
+        if (!Hash::check($request->current_password, $userPassword)) {
+            return back()->withErrors(['current_password'=>'password not match']);
+        }
+
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        return redirect()->back()->with('success','password successfully updated');
+    }
+
 }

@@ -6,7 +6,8 @@
     <h1 class="h3 mb-2 text-gray-800">Edit Phlebotomist</h1>
     <nav class="ml-auto" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/viewphlebotomists">Phlebotomists</a></li>
           <li class="breadcrumb-item active" aria-current="page">Edit Phlebotomist</li>
         </ol>
       </nav>

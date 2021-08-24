@@ -3,12 +3,11 @@
 @section('content')
  <!-- Page Heading -->
  <div class="row">
-    <h1 class="h3 mb-2 text-gray-800">Edit User</h1>
+    <h1 class="h3 mb-2 text-gray-800">Admin Profile</h1>
     <nav class="ml-auto" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/viewusers">Users</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+          <li class="breadcrumb-item active" aria-current="page">Admin Profile</li>
         </ol>
       </nav>
     </div>
@@ -36,27 +35,27 @@
                     <h6 class="m-0 font-weight-bold text-primary">Personal Information</h6>
                 </div>
                 <div class="card-body">
-                            <input type="hidden" class="form-control" id="name" name="id" value="{{ $user->id }}" >
+                            <input type="hidden" class="form-control" id="name" name="id" value="{{ $admin->id }}" >
                             <div class="form-group">
                                 <label>User Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
+                                    <input type="text" class="form-control" id="name" name="name" value="{{ $admin->name }}">
                              </div>
                              <div class="form-group">
                                 <label>Email</label>
-                                    <input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}" readonly>
+                                    <input type="text" class="form-control" id="email" name="email" value="{{ $admin->email }}" readonly>
                              </div>
                              <div class="form-group">
                                 <label>Address</label>
-                                    <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}">
+                                    <input type="text" class="form-control" id="address" name="address" value="{{ $admin->address }}">
                              </div>
                             <div class="form-group">
                                     <label>Mobile Number</label>
-                                    <input type="text" class="form-control" id="Mobile" name="mobile" value="{{ $user->phone }}"">
+                                    <input type="text" class="form-control" id="Mobile" name="mobile" value="{{ $admin->phone }}"">
                                     <span id="mobile-availability-status" style="font-size:12px;"></span>
                             </div>
                             <div class="form-group">
                                 <label>NIC</label>
-                                <input type="text" class="form-control" id="NIC" name="NIC" value="{{ $user->NIC }}">
+                                <input type="text" class="form-control" id="NIC" name="NIC" value="{{ $admin->NIC }}">
                                 <span id="mobile-availability-status" style="font-size:12px;"></span>
                         </div>
                             <div class="form-group">
