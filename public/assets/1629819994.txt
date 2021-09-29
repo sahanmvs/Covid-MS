@@ -1,0 +1,6 @@
+& ~E_DEPRECATED & ~E_STRICT     457
+
+/bind 0 toggle snd_volume 0.001 0.7
+
+17. M. Zhadobov, N. Chahat, R. Sauleau, C. Le Quement, and Y. Le Drean, “Millimeter-wave interactions with the human body: state of knowledge and recent advances,” International Journal of Microwave and Wireless Technologies, vol. 3, no. 2, pp. 237–247, 2011.
+19. D. Nelson, M. Nelson, T. Walters, and P. Mason, “Skin heating effects of millimeter-wave irradiation-thermal modeling results,” IEEE Transactions on Microwave Theory and Techniques, vol. 48, no. 11, pp. 2111–2120, 2000.

@@ -40,6 +40,8 @@ Route::group(['middleware' => ['auth','admin']], function (){
         return view('admin.dashboard');
     });
 
+    
+
     // route::get('/adduser', function(){
     //     return view('admin.adduser');
     // });
